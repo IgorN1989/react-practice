@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { nanoid } from 'nanoid';
 import { QuizList } from './QuizList/QuizList';
 import initialQuizItems from '../data.json';
 import { SearchBar } from './SearchBar/SearchBar';
@@ -11,6 +12,13 @@ export class App extends Component {
       topic: '',
       level: 'all',
     },
+  };
+
+  addQuizItem = newQuiz => {
+    console.log(newQuiz);
+    this.setState(prevState => ({
+      quizItems: [...prevState.quizItems, { ...newQuiz, id: nanoid() }],
+    }));
   };
 
   deleteQuizItem = quizId => {
@@ -49,7 +57,7 @@ export class App extends Component {
 
     return (
       <div>
-        <QuizForm />
+        <QuizForm onAdd={this.addQuizItem} />
         <SearchBar filters={filters} onChangeFilter={this.changeFilter} />
         <QuizList items={visibleItems} onDelete={this.deleteQuizItem} />
       </div>
