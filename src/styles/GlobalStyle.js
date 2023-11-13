@@ -39,11 +39,3 @@ img {
   object-fit: cover;
 }
 `;
-
-export const theme = {
-  colors: {
-    orange: 'tomato',
-    error: 'red',
-  },
-  spacing: value => `${value * 4}px`,
-};

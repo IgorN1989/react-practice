@@ -1,20 +1,25 @@
 import styled from 'styled-components';
 
-const getBorderColor = ({ theme, $level }) => {
+const getBackgroundColor = ({ theme, $level }) => {
   switch ($level) {
     case 'beginner':
-      return 'green';
+      return theme.colors.beginner;
     case 'intermediate':
-      return 'blue';
+      return theme.colors.intermediate;
     case 'advanced':
-      return theme.colors.orange;
+      return theme.colors.advanced;
     default:
       return null;
   }
 };
 
 export const Container = styled.div`
-  border: 3px solid ${getBorderColor};
+  border: 3px solid ${getBackgroundColor};
+  border-radius: 4px;
+  background-color: ${getBackgroundColor};
+  /* color: rgb(0, 128, 0, 0.3);
+  color: rgb(0, 0, 255, 0.3);
+  color: rgb(255, 165, 0, 0.3); */
 `;
 
 export const InfoWrapper = styled.div`
