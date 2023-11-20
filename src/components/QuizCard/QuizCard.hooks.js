@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { HiTrash } from 'react-icons/hi';
 import Modal from 'react-modal';
 import { Info, InfoWrapper, Container } from './QuizCard.styled';
+import { LineWave } from 'react-loader-spinner';
+import { Link } from 'react-router-dom';
 
 const customStyles = {
   content: {
@@ -32,7 +34,9 @@ export const QuizCard = ({
 
   return (
     <Container $level={level}>
-      <h2>{topic}</h2>
+      <Link to={`/quizzes/:${id}`}>
+        <h2>{topic}</h2>
+      </Link>
       <InfoWrapper>
         <Info>Level: {level}</Info>
         <Info>Time: {time} min</Info>

@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { Audio } from 'react-loader-spinner';
-import { QuizList } from './QuizList/QuizList';
-import { SearchBar } from './SearchBar/SearchBar';
-import { QuizForm } from './QuizForm/QuizForm';
-import { Layout } from './Layout/Layout';
-import { ErrorMessage } from './ErrorMessage/ErrorMessage';
-import { createQuiz, fetchQuizzes, deleteQuizById } from 'api';
+import { QuizList } from 'components/QuizList/QuizList';
+import { SearchBar } from 'components/SearchBar/SearchBar';
+import { ErrorMessage } from 'components/ErrorMessage/ErrorMessage';
+import { fetchQuizzes, deleteQuizById } from 'api';
 
 const getInitialFilters = () => {
   const savedFilters = localStorage.getItem(`quiz-filters`);
@@ -19,7 +17,7 @@ const getInitialFilters = () => {
   };
 };
 
-export const App = () => {
+export default function QuizzesPage() {
   const [quizItems, setQuizItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -46,20 +44,6 @@ export const App = () => {
 
     getQuizzes();
   }, []);
-
-  const addQuiz = async newQuiz => {
-    try {
-      setLoading(true);
-      setError(false);
-      const quiz = await createQuiz(newQuiz);
-      setQuizItems(prevState => [...prevState.quizItems, quiz]);
-      toast.success('Quiz was added!');
-    } catch (error) {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const deleteQuizItem = async quizId => {
     try {
@@ -97,8 +81,7 @@ export const App = () => {
   });
 
   return (
-    <Layout>
-      <QuizForm onAdd={addQuiz} />
+    <>
       <SearchBar
         filters={filters}
         onChangeFilter={changeFilter}
@@ -122,7 +105,6 @@ export const App = () => {
       {visibleItems.length > 0 && (
         <QuizList items={visibleItems} onDelete={deleteQuizItem} />
       )}
-      <Toaster />
-    </Layout>
+    </>
   );
-};
+}
