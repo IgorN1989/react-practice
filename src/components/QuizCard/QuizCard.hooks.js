@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { HiTrash } from 'react-icons/hi';
 import Modal from 'react-modal';
 import { Info, InfoWrapper, Container } from './QuizCard.styled';
-import { LineWave } from 'react-loader-spinner';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const customStyles = {
   content: {
@@ -22,6 +21,7 @@ export const QuizCard = ({
   quiz: { id, topic, level, time, questions },
   onDelete,
 }) => {
+  const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState();
 
   const openModal = () => {
@@ -34,7 +34,7 @@ export const QuizCard = ({
 
   return (
     <Container $level={level}>
-      <Link to={`/quizzes/:${id}`}>
+      <Link to={`/quizzes/${id}`} state={{ from: location }}>
         <h2>{topic}</h2>
       </Link>
       <InfoWrapper>

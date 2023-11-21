@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { StyledLink } from '../Link/Link.styled';
 import { Toaster } from 'react-hot-toast';
 import { Container } from './Layout.styled';
@@ -22,7 +24,9 @@ export const Layout = () => {
         </nav>
       </header>
 
-      <Outlet />
+      <Suspense fallback="LOADING PAGE...">
+        <Outlet />
+      </Suspense>
       <Toaster position="top-right" />
     </Container>
   );

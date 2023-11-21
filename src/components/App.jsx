@@ -1,12 +1,13 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
 
 import { Layout } from './Layout/Layout';
-import HomePage from 'pages/HomePage';
-import QuizzesPage from 'pages/QuizzesPage';
-import CreateQuizPage from 'pages/CreateQuizPage';
-import NotFoundPage from 'pages/NotFoundPage';
-import QuizDetailsPage from 'pages/QuizDetailsPage';
+
+const HomePage = lazy(() => import('../pages/HomePage'));
+const QuizzesPage = lazy(() => import('../pages/QuizzesPage'));
+const CreateQuizPage = lazy(() => import('../pages/CreateQuizPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
+const QuizDetailsPage = lazy(() => import('../pages/QuizDetailsPage'));
 
 export const App = () => {
   return (

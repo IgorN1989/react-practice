@@ -1,30 +1,15 @@
-export const SearchBar = ({
-  filters: { topic, level },
-  onChangeFilter,
-  onReset,
-}) => {
+import { LevelFilter } from 'components/LevelFilter/LevelFilter';
+import { TopicFilter } from 'components/TopicFilter/TopicFilter';
+import { useFilters } from 'hooks/useFilters';
+
+export const SearchBar = () => {
+  const { reset } = useFilters();
+
   return (
     <div>
-      <input
-        type="text"
-        value={topic}
-        placeholder="Filter by topic..."
-        onChange={evt => {
-          onChangeFilter('topic', evt.target.value);
-        }}
-      />
-      <select
-        value={level}
-        onChange={evt => {
-          onChangeFilter('level', evt.target.value);
-        }}
-      >
-        <option value="all">All</option>
-        <option value="beginner">Beginner</option>
-        <option value="intermediate">Intermediate</option>
-        <option value="advanced">Advanced</option>
-      </select>
-      <button type="button" onClick={onReset}>
+      <TopicFilter />
+      <LevelFilter />
+      <button type="button" onClick={reset}>
         Reset filters
       </button>
     </div>
