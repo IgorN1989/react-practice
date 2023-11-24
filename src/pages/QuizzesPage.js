@@ -5,7 +5,6 @@ import { QuizList } from 'components/QuizList/QuizList';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { ErrorMessage } from 'components/ErrorMessage/ErrorMessage';
 import { fetchQuizzes, deleteQuizById } from 'api';
-import { useSearchParams } from 'react-router-dom';
 import { useFilters } from 'hooks/useFilters';
 
 export default function QuizzesPage() {
