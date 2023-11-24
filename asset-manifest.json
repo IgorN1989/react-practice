@@ -1,13 +1,29 @@
 {
   "files": {
     "main.css": "/react-practice/static/css/main.cd2e038f.css",
-    "main.js": "/react-practice/static/js/main.b8481a3a.js",
+    "main.js": "/react-practice/static/js/main.60f9ea9c.js",
+    "static/js/206.2be3c405.chunk.js": "/react-practice/static/js/206.2be3c405.chunk.js",
+    "static/js/636.44f26126.chunk.js": "/react-practice/static/js/636.44f26126.chunk.js",
+    "static/js/291.21b262bb.chunk.js": "/react-practice/static/js/291.21b262bb.chunk.js",
+    "static/js/791.dfa56e0f.chunk.js": "/react-practice/static/js/791.dfa56e0f.chunk.js",
+    "static/js/609.05dc8bfe.chunk.js": "/react-practice/static/js/609.05dc8bfe.chunk.js",
+    "static/js/162.6b30c17f.chunk.js": "/react-practice/static/js/162.6b30c17f.chunk.js",
+    "static/js/568.e02df108.chunk.js": "/react-practice/static/js/568.e02df108.chunk.js",
+    "static/js/359.949b6590.chunk.js": "/react-practice/static/js/359.949b6590.chunk.js",
     "index.html": "/react-practice/index.html",
     "main.cd2e038f.css.map": "/react-practice/static/css/main.cd2e038f.css.map",
-    "main.b8481a3a.js.map": "/react-practice/static/js/main.b8481a3a.js.map"
+    "main.60f9ea9c.js.map": "/react-practice/static/js/main.60f9ea9c.js.map",
+    "206.2be3c405.chunk.js.map": "/react-practice/static/js/206.2be3c405.chunk.js.map",
+    "636.44f26126.chunk.js.map": "/react-practice/static/js/636.44f26126.chunk.js.map",
+    "291.21b262bb.chunk.js.map": "/react-practice/static/js/291.21b262bb.chunk.js.map",
+    "791.dfa56e0f.chunk.js.map": "/react-practice/static/js/791.dfa56e0f.chunk.js.map",
+    "609.05dc8bfe.chunk.js.map": "/react-practice/static/js/609.05dc8bfe.chunk.js.map",
+    "162.6b30c17f.chunk.js.map": "/react-practice/static/js/162.6b30c17f.chunk.js.map",
+    "568.e02df108.chunk.js.map": "/react-practice/static/js/568.e02df108.chunk.js.map",
+    "359.949b6590.chunk.js.map": "/react-practice/static/js/359.949b6590.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.b8481a3a.js"
+    "static/js/main.60f9ea9c.js"
   ]
 }
