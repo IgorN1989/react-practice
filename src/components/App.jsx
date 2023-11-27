@@ -1,24 +1,17 @@
-import { lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
-
-import { Layout } from './Layout/Layout';
-
-const HomePage = lazy(() => import('../pages/HomePage'));
-const QuizzesPage = lazy(() => import('../pages/QuizzesPage'));
-const CreateQuizPage = lazy(() => import('../pages/CreateQuizPage'));
-const NotFoundPage = lazy(() => import('../pages/NotFoundPage'));
-const QuizDetailsPage = lazy(() => import('../pages/QuizDetailsPage'));
+import { useSelector } from 'react-redux';
+import { Account } from './Account';
+import { LangSwitcher } from './LangSwitcher';
 
 export const App = () => {
+  const lang = useSelector(state => state.locale.lang);
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path="create" element={<CreateQuizPage />} />
-        <Route path="quizzes" element={<QuizzesPage />} />
-        <Route path="quizzes/:quizId" element={<QuizDetailsPage />} />
-      </Route>
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+    <div>
+      <LangSwitcher />
+      <h1>User account data</h1>
+      <Account />
+      <p>
+        <b>Lang: {lang}</b>
+      </p>
+    </div>
   );
 };
