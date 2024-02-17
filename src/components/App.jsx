@@ -1,17 +1,13 @@
-import { useSelector } from 'react-redux';
-import { Account } from './Account';
-import { LangSwitcher } from './LangSwitcher';
+import { Alert, Container, Typography } from '@mui/material';
 
 export const App = () => {
-  const lang = useSelector(state => state.locale.lang);
   return (
-    <div>
-      <LangSwitcher />
-      <h1>User account data</h1>
-      <Account />
-      <p>
-        <b>Lang: {lang}</b>
-      </p>
-    </div>
+    <Container sx={{ bgcolor: 'tomato', height: '100vh' }}>
+      <Typography variant="h1" sx={{ p: 2, ':hover': { bgcolor: 'blue' } }}>
+        TEST
+      </Typography>
+      <Alert severity="error">Hello</Alert>
+      <Container></Container>
+    </Container>
   );
 };
